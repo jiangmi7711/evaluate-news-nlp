@@ -1,5 +1,7 @@
 # evaluate-news-nlp
 evaluate-news-nlp
+
+
 Project Instructions
 This Github repository is your starter code for the project. Clone the specific branch 'refresh-2019' or download the ZIP file, although feel free to start from scratch! It is the same as the starter code we began with in Lesson 2. Install and configure Webpack just as we did in the course. Feel free to refer to the course repo as you build this one, and remember to make frequent commits and to create and merge branches as necessary!
 
