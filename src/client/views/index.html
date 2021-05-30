@@ -3,11 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
-       <!--  <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css"> -->
     </head>
 
     <body>
@@ -24,15 +19,11 @@
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="text-entry" type="text" name="input" value="" placeholder="Enter Text">
-                    <input id="input-button" class="btn btn-primary btn-sm" type="submit" name="" value="Submit Now">
+                    <input id="name" type="text" name="input" value="" placeholder="Type in Text to find Sentiment">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return 
+                    Client.handleSubmit(event)">
                 </form>
-            </section>
-
             <section>
-                <p>Your input:</p>
-                <div id="user_input"></div>
-            </section>
 
             <section>
                 <strong>Form Results:</strong>
@@ -52,12 +43,5 @@
                 });
             }
            </script>
-           <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-           <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-   
-       </body>
-   </html>
-   
     </body>
 </html>

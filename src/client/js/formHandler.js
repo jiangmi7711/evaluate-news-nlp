@@ -1,44 +1,42 @@
-
 const fetch = require('node-fetch');
+
 function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
-    let formText = document.getElementById('text-entry').value;
-    document.getElementById('results').innerHTML = '';
-    document.getElementById('user_input').innerHTML = formText;
 
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8081/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
-    })
+let formText = document.getElementById('name').value
 
-    // POST request to server
-    const postData = async (url = '', data = {}) => {
+console.log("::: Form Submitted :::");
 
-        const options = {
-            method: 'POST',
-            credentials: 'same-origin',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        }
-
-        const response = await fetch(url, options);
-        try {
-            const data = await response.json();
-            document.getElementById('results').innerHTML = data.agreement;
-        }catch(error) {
-            console.log('error', error)
-        }
+const postData = async ( url = '', data = {}) => {
+    const response = await fetch(url, {
+    method: 'POST', 
+    credentials: 'same-origin',
+    headers: {
+          'Content-Type': 'application/json',
+      },
+     // Body data type must match "Content-Type" header        
+    body: JSON.stringify(data),
+    });
+    try {
+        const newData = await response.json();
+        return newData;
     }
+    catch(error) {
+      console.log("error", error);
+      }
+  }
 
-    postData('http://localhost:8081/userInput', {
-        userInput: formText
+postData('/api', {txt: formText})
+    .then(function(res) {
+        if (res.agreement === undefined && res.confidence === undefined && res.subjectivity === undefined && res.polarity === undefined) {
+            alert("Please input text!")
+        } else {
+            document.getElementById('results').innerHTML = `Agreement: ${res.agreement}    Polarity: ${res.polarity}    Confidence: ${res.conidence}    Subjectivity: ${res.subjectivity}`;
+        }
     })
+
 }
 
 export { handleSubmit }
