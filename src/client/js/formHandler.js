@@ -30,10 +30,10 @@ const postData = async ( url = '', data = {}) => {
 
 postData('http://localhost:8081/api', {txt: formText})
     .then(function(res) {
-        if (res.agreement === undefined && res.confidence === undefined && res.subjectivity === undefined && res.polarity === undefined) {
+        if (res.agreement === undefined && res.confidence === undefined && res.subjectivity === undefined && res.irony === undefined) {
             alert("Please input text!")
         } else {
-            document.getElementById('results').innerHTML = `Agreement: ${res.agreement}    Polarity: ${res.polarity}    Confidence: ${res.conidence}    Subjectivity: ${res.subjectivity}`;
+            document.getElementById('results').innerHTML = `Agreement: ${res.agreement}    Subjectivity: ${res.subjectivity}    Confidence: ${res.conidence}    Irony: ${res.irony}`;
         }
     })
 
