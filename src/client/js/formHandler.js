@@ -28,7 +28,7 @@ const postData = async ( url = '', data = {}) => {
       }
   }
 
-postData('/api', {txt: formText})
+postData('http://localhost:8081/api', {txt: formText})
     .then(function(res) {
         if (res.agreement === undefined && res.confidence === undefined && res.subjectivity === undefined && res.irony === undefined && res.score_tag ===undefined) {
             alert("Please input text!")
