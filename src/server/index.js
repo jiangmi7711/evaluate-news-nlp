@@ -52,6 +52,7 @@ const callApi = async (url, classification, res) => {
         classification['confidence'] = data.confidence;
         classification['subjectivity'] = data.subjectivity;
         classification['irony'] = data.irony;
+        classification['score_tag '] = data.score_tag ;
     }
     catch(error) {console.log("There was an error", error);}
     console.log(classification);
