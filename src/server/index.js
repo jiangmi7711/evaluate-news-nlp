@@ -59,7 +59,7 @@ const callApi = async (url, classification, res) => {
     res.send(classification);
 }
 
-app.post('/api', function (req, res) {
+app.post('http://localhost:8081/api', function (req, res) {
     let classification = {};
     let text = req.body.txt;
     let url = `https://api.meaningcloud.com/sentiment-2.1?key=${API_KEY}&lang=en&txt=${text}&model=general`;
