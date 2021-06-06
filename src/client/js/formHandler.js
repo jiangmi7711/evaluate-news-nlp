@@ -9,7 +9,7 @@ let formText = document.getElementById('name').value
 
 console.log("::: Form Submitted :::");
 
-const postData = async ( url = '', data = {}) => {
+const postData = async (url = '', data = {}) => {
     const response = await fetch(url, {
     method: 'POST', 
     credentials: 'same-origin',
@@ -28,7 +28,7 @@ const postData = async ( url = '', data = {}) => {
       }
   }
 
-postData('http://localhost:8081/api', {txt: formText})
+postData('/api', {txt: formText}) //http://localhost:8081/api
     .then(function(res) {
         if (res.agreement === undefined && res.confidence === undefined && res.subjectivity === undefined && res.irony === undefined && res.score_tag ===undefined) {
             alert("Please input text!")
