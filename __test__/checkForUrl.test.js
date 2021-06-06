@@ -1,4 +1,4 @@
-import { confirmUrl } from '../client/js/checkForUrl';
+import { checkForUrl } from '../client/js/checkForUrl';
 
 describe ('check Name', () => {
     test ('should return true', () => {
