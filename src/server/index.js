@@ -69,5 +69,5 @@ app.post('/api', function (req, res) {
 
 processApi();
 
-export { printPort }
+//export { printPort }
 
