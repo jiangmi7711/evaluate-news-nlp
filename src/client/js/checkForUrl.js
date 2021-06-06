@@ -1,10 +1,5 @@
-function confirmUrl(url) {
-    const regexp = (/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gi);
-    if (regexp.test(url)) {
-        return true;
-    }
-    return false;
-}
-
-
-export { confirmUrl }
+function checkForUrl(inputText) {
+    const URLinput = /^https?:\/\//gi
+    return URLinput.test(inputText)
+  };
+  export { checkForUrl }

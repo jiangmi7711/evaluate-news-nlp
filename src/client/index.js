@@ -15,5 +15,4 @@ export {
     handleSubmit,
     checkForUrl,
     checkForName
-
    }
