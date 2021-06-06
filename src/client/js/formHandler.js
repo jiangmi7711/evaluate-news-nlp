@@ -5,7 +5,8 @@ function handleSubmit(event) {
 
     // check what text was put into the form field
 
-let formText = document.getElementById('name').value
+let formText = document.getElementById('name').value;
+//checkForName(formText)
 
 console.log("::: Form Submitted :::");
 
@@ -28,7 +29,7 @@ const postData = async (url = '', data = {}) => {
       }
   }
 
-postData('/api', {txt: formText}) //http://localhost:8081/api
+postData('http://localhost:8081/api', {txt: formText}) //http://localhost:8081/api
     .then(function(res) {
         if (res.agreement === undefined && res.confidence === undefined && res.subjectivity === undefined && res.irony === undefined && res.score_tag ===undefined) {
             alert("Please input text!")
