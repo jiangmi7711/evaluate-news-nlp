@@ -1,16 +1,15 @@
-//import { checkForUrl } from './urlChecker'
-
+const { checkForUrl } = require("./urlChecker");
 const fetch = require('node-fetch');
 
 function handleSubmit(event) {
     event.preventDefault()
 
-    // check what text was put into the form field
+// check what text was put into the form field
 
 let formText = document.getElementById('name').value;
-//Client.checkForName(formText);
-//Client.checkForUrl(formText)
-//checkForUrl(formText);
+
+Client.checkForUrl(formText);
+
 console.log("::: Form Submitted :::");
 
 const postData = async (url = '', data = {}) => {

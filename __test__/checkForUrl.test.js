@@ -1,4 +1,4 @@
-import { checkForUrl } from '../src/client/js/checkForUrl';
+import { checkForUrl } from '../src/client/js/urlChecker';
 describe ('check Name', () => {
     test ('should return true', () => {
         const url='https://google.com'
