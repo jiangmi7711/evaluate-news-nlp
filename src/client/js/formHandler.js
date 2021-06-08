@@ -1,5 +1,7 @@
+//import { checkForUrl } from './urlChecker'
+
 const fetch = require('node-fetch');
-//const { checkForUrl } = require("./checkForUrl");
+
 function handleSubmit(event) {
     event.preventDefault()
 
@@ -8,7 +10,7 @@ function handleSubmit(event) {
 let formText = document.getElementById('name').value;
 //Client.checkForName(formText);
 //Client.checkForUrl(formText)
-checkForUrl(formText);
+//checkForUrl(formText);
 console.log("::: Form Submitted :::");
 
 const postData = async (url = '', data = {}) => {

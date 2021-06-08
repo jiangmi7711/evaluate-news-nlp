@@ -3,3 +3,4 @@ function checkForUrl(inputText) {
     return URLinput.test(inputText)
   };
   export { checkForUrl }
+  
