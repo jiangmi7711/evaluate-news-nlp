@@ -8,7 +8,7 @@ function handleSubmit(event) {
 
 let formText = document.getElementById('name').value;
 
-Client.checkForUrl(formText);
+checkForUrl(formText);
 
 console.log("::: Form Submitted :::");
 
