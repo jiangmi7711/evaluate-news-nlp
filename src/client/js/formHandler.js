@@ -34,9 +34,9 @@ const postData = async (url = '', data = {}) => {
 postData('http://localhost:8081/api', {txt: formText}) //http://localhost:8081/api
     .then(function(res) {
         if (res.agreement === undefined && res.confidence === undefined && res.subjectivity === undefined && res.irony === undefined && res.score_tag ===undefined) {
-            alert("Please input text!")
+            alert("Please input url!")
         } else {
-            document.getElementById('results').innerHTML = `Agreement: ${res.agreement}    Subjectivity: ${res.subjectivity}    Confidence: ${res.conidence}    Irony: ${res.irony}    Score_tag: ${res.score_tag}`;
+            document.getElementById('results').innerHTML = `Agreement: ${res.agreement}    Subjectivity: ${res.subjectivity}    Confidence: ${res.confidence}    Irony: ${res.irony}    Score_tag: ${res.score_tag}`;
         }
     })
 
