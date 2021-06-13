@@ -31,7 +31,22 @@ const postData = async (url = '', data = {}) => {
       }
   }
 
-postData('http://localhost:8081/api', {txt: formText}) //http://localhost:8081/api
+
+  if(checkForUrl(formText)) {
+    postData('http://localhost:8081/api', {txt: formText}) //http://localhost:8081/api
+    .then(function(res) {
+    if (res.agreement === undefined && res.confidence === undefined && res.subjectivity === undefined && res.irony === undefined && res.score_tag ===undefined) {
+    alert("Please input url!")
+    } else {
+    document.getElementById('results').innerHTML = Agreement: ${res.agreement} Subjectivity: ${res.subjectivity} Confidence: ${res.confidence} Irony: ${res.irony} Score_tag: ${res.score_tag};
+    }
+    })
+    
+    } else {
+    alert("Please enter a valid URL");
+    }
+}
+/* postData('http://localhost:8081/api', {txt: formText}) //http://localhost:8081/api
     .then(function(res) {
         if (res.agreement === undefined && res.confidence === undefined && res.subjectivity === undefined && res.irony === undefined && res.score_tag ===undefined) {
             alert("Please input url!")
@@ -40,6 +55,6 @@ postData('http://localhost:8081/api', {txt: formText}) //http://localhost:8081/a
         }
     })
 
-}
+} */
 
 export { handleSubmit }
